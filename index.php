@@ -44,11 +44,7 @@
   </div>
 
 
-  <!-- test push -->
-  <!-- test push -->
-
-  <!-- test pull -->
-  <!-- test pull -->
+<!-- git test -->
 
 
 

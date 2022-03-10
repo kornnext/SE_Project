@@ -108,13 +108,13 @@ if (isset($_POST['login'])) {
 	$row = mysqli_fetch_array($result);
 
 	if ($result->num_rows > 0) {
-		if ($row['type'] == "01") {
-			$_SESSION['user'] = $username;  //admin check
-			$_SESSION['ID'] = $row['ID'];  //admin check
+		if ($row['type'] == "01") {   //admin check
+			$_SESSION['user'] = $username;
+			$_SESSION['ID'] = $row['ID'];  //push data to SESSION
 			echo "<script>window.open('adminpage.php','_self')</script>";
-		} elseif ($row['type'] == "02") {
-			$_SESSION['user'] = $username;  //user check
-			$_SESSION['ID'] = $row['ID'];  //user check
+		} elseif ($row['type'] == "02") {   //user check
+			$_SESSION['user'] = $username;
+			$_SESSION['ID'] = $row['ID'];  //push data to SESSION
 			echo "<script>window.open('userpage.php','_self')</script>";
 		}
 	} else {

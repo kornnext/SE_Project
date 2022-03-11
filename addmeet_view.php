@@ -72,7 +72,7 @@
 								<select class="form-control" id="roomid" name="roomid" required>
 									<?php
 									include('conn.php');
-									$query = mysqli_query($conn, "select * from room");
+									$query = mysqli_query($conn, "SELECT * FROM room ORDER BY roomname ASC");
 									while ($row = mysqli_fetch_array($query)) {
 									?>
 										<option value="<?php echo $row['roomid']; ?>"><?php echo $row['roomname']; ?></option>
@@ -147,7 +147,7 @@
 								<?php
 								include('conn.php');
 								$userrequest = $_SESSION['user'];
-								$queryuser = mysqli_query($conn, "select * from user where username='$userrequest'");
+								$queryuser = mysqli_query($conn, "SELECT * FROM user WHERE username='$userrequest'");
 								while ($row = mysqli_fetch_array($queryuser)) {
 								?>
 									<div class="col-lg-10">

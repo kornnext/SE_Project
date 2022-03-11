@@ -1,7 +1,7 @@
 <?php
 	include('conn.php');
-	$roomid=$_GET['roomid'];
-	mysqli_query($conn,"delete from room where roomid='$roomid'");
-	header('location:addroom.php');
+	$meetid=$_GET['meetid'];
+	mysqli_query($conn,"DELETE FROM meeting WHERE meetid='$meetid'");
+	header('location:addmeet.php');
 
 ?>

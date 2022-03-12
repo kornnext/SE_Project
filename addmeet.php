@@ -44,7 +44,7 @@
 					<?php
 					include('conn.php');
 
-					$query = mysqli_query($conn, "select * from meeting");
+					$query = mysqli_query($conn, "SELECT * FROM meeting");
 					while ($row = mysqli_fetch_array($query)) {
 					?>
 						<tr>

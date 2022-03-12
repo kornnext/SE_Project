@@ -101,7 +101,7 @@ if (isset($_POST['login'])) {
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
-	$check_user = "select * from user WHERE username='$username' AND password='$password'";
+	$check_user = "SELECT * FROM user WHERE username='$username' AND password='$password'";
 
 	$result = $conn->query($check_user);
 

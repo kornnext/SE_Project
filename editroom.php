@@ -11,7 +11,9 @@
 	$other=$_POST['other'];
 
 	
-	mysqli_query($conn,"update room set roomname='$roomname', location='$location', capacity='$capacity', projector='$projector', microphone='$microphone', other='$other' where roomid='$roomid'");
+	mysqli_query($conn,"UPDATE room 
+						SET roomname='$roomname', location='$location', capacity='$capacity', projector='$projector', microphone='$microphone', other='$other' 
+						WHERE roomid='$roomid'");
 	header('location:addroom.php');
 
 ?>

@@ -5,64 +5,64 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				<center>
 					<h4 class="modal-title" id="myModalLabel">เพิ่มห้องประชุม</h4>
 				</center>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			</div>
 			<div class="modal-body">
 				<div class="container-fluid">
 					<form method="POST" action="addroom_model.php">
 						<div class="row">
-							<div class="col-lg-2">
+							<div class="col-lg-4">
 								<label class="control-label" style="position:relative; top:7px;">ชื่อห้อง:</label>
 							</div>
-							<div class="col-lg-10">
+							<div class="col-lg-8">
 								<input type="text" class="form-control" name="roomname" required>
 							</div>
 						</div>
 						<div style="height:10px;"></div>
 						<div class="row">
-							<div class="col-lg-2">
+							<div class="col-lg-4">
 								<label class="control-label" style="position:relative; top:7px;">สถานที่:</label>
 							</div>
-							<div class="col-lg-10">
+							<div class="col-lg-8">
 								<input type="text" class="form-control" name="location" required>
 							</div>
 						</div>
 						<div style="height:10px;"></div>
 						<div class="row">
-							<div class="col-lg-2">
+							<div class="col-lg-4">
 								<label class="control-label" style="position:relative; top:7px;">ความจุห้อง:</label>
 							</div>
-							<div class="col-lg-10">
+							<div class="col-lg-8">
 								<input type="number" class="form-control" name="capacity" required>
 							</div>
 						</div>
 						<div style="height:10px;"></div>
 						<div class="row">
-							<div class="col-lg-2">
+							<div class="col-lg-4">
 								<label class="control-label" style="position:relative; top:7px;">จำนวนโปรเจคเตอร์:</label>
 							</div>
-							<div class="col-lg-10">
+							<div class="col-lg-8">
 								<input type="number" class="form-control" name="projector" required>
 							</div>
 						</div>
 						<div style="height:10px;"></div>
 						<div class="row">
-							<div class="col-lg-2">
+							<div class="col-lg-4">
 								<label class="control-label" style="position:relative; top:7px;">จำนวนไมค์โครโฟน:</label>
 							</div>
-							<div class="col-lg-10">
+							<div class="col-lg-8">
 								<input type="number" class="form-control" name="microphone" required>
 							</div>
 						</div>
 						<div style="height:10px;"></div>
 						<div class="row">
-							<div class="col-lg-2">
+							<div class="col-lg-4">
 								<label class="control-label" style="position:relative; top:7px;">อื่นๆ:</label>
 							</div>
-							<div class="col-lg-10">
+							<div class="col-lg-8">
 								<input type="text" class="form-control" name="other">
 							</div>
 						</div>

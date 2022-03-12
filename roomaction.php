@@ -47,55 +47,55 @@
                 <div class="container-fluid">
                     <form method="POST" action="editroom.php?roomid=<?php echo $erow['roomid']; ?>">
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-4">
                                 <label style="position:relative; top:7px;">ชื่อห้อง:</label>
                             </div>
-                            <div class="col-lg-10">
+                            <div class="col-lg-8">
                                 <input type="text" name="roomname" class="form-control" value="<?php echo $erow['roomname']; ?>" >
                             </div>
                         </div>
                         <div style="height:10px;"></div>
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-4">
                                 <label style="position:relative; top:7px;">สถานที่:</label>
                             </div>
-                            <div class="col-lg-10">
+                            <div class="col-lg-8">
                                 <input type="text" name="location" class="form-control" value="<?php echo $erow['location']; ?>" >
                             </div>
                         </div>
                         <div style="height:10px;"></div>
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-4">
                                 <label style="position:relative; top:7px;">ความจุห้อง:</label>
                             </div>
-                            <div class="col-lg-10">
+                            <div class="col-lg-8">
                                 <input type="number" name="capacity" class="form-control" value="<?php echo $erow['capacity']; ?>" >
                             </div>
                         </div>
                         <div style="height:10px;"></div>
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-4">
                                 <label style="position:relative; top:7px;">จำนวนโปรเจคเตอร์:</label>
                             </div>
-                            <div class="col-lg-10">
+                            <div class="col-lg-8">
                                 <input type="number" name="projector" class="form-control" value="<?php echo $erow['projector']; ?>">
                             </div>
                         </div>
                         <div style="height:10px;"></div>
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-4">
                                 <label style="position:relative; top:7px;">จำนวนไมค์โครโฟน:</label>
                             </div>
-                            <div class="col-lg-10">
+                            <div class="col-lg-8">
                                 <input type="number" name="microphone" class="form-control" value="<?php echo $erow['microphone']; ?>">
                             </div>
                         </div>
                         <div style="height:10px;"></div>
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-4">
                                 <label style="position:relative; top:7px;">อื่นๆ:</label>
                             </div>
-                            <div class="col-lg-10">
+                            <div class="col-lg-8">
                                 <input type="text" name="other" class="form-control" value="<?php echo $erow['other']; ?>">
                             </div>
                         </div>

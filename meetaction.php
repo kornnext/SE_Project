@@ -51,50 +51,50 @@
 
                     <form method="POST" action="editmeet.php?meetid=<?php echo $erow['meetid']; ?>">
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-4">
                                 <label style="position:relative; top:7px;">รหัสการจอง:</label>
                             </div>
-                            <div class="col-lg-10">
+                            <div class="col-lg-8">
                                 <input type="text" name="meetid" class="form-control" value="<?php echo $erow['meetid']; ?>" disabled>
                             </div>
                         </div>
 
                         <div style="height:10px;"></div>
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-4">
                                 <label style="position:relative; top:7px;">วาระการประชุม:</label>
                             </div>
-                            <div class="col-lg-10">
+                            <div class="col-lg-8">
                                 <input type="text" name="title" class="form-control" value="<?php echo $erow['title']; ?>">
                             </div>
                         </div>
 
                         <div style="height:10px;"></div>
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-4">
                                 <label style="position:relative; top:7px;">จำนวนผู้เข้าประชุม:</label>
                             </div>
-                            <div class="col-lg-10">
+                            <div class="col-lg-8">
                                 <input type="number" min="0" name="numattend" class="form-control" value="<?php echo $erow['numattend']; ?>">
                             </div>
                         </div>
 
                         <div style="height:10px;"></div>
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-4">
                                 <label style="position:relative; top:7px;">อุปกรณ์เพิ่มติม:</label>
                             </div>
-                            <div class="col-lg-10">
+                            <div class="col-lg-8">
                                 <input type="text" name="addequipment" class="form-control" value="<?php echo $erow['addequipment']; ?>">
                             </div>
                         </div>
 
                         <div style="height:10px;"></div>
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-4">
                                 <label style="position:relative; top:7px;">หมายเหตุ:</label>
                             </div>
-                            <div class="col-lg-10">
+                            <div class="col-lg-8">
                                 <input type="text" name="remark" class="form-control" value="<?php echo $erow['remark']; ?>">
                             </div>
                         </div>

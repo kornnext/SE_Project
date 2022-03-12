@@ -22,13 +22,13 @@
 
 	<div class="container">
 		<div style="height:50px;"></div>
-		<div class="well" style="margin:auto; padding:auto; width:80%;">
+		<div class="well" style="margin:auto; padding:auto; width:100%;">
 			<span style="font-size:25px; color:blue">
 				<center><strong>เพิ่มการประชุม</strong></center>
 			</span>
 			<span class="pull-left"><a href="#addnew" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add New</a></span>
 			<div style="height:50px;"></div>
-			<table class="table table-striped table-bordered table-hover">
+			<table class="table table-striped table-bordered table-hover text-center">
 				<thead>
 					<th>รหัสการจอง</th>
 					<th>วาระประชุม</th>
@@ -38,7 +38,7 @@
 					<th>วันเวลาเริ่มประชุม</th>
 					<th>วันเวลาสิ้นสุดการประชุม</th>
 					<th>เอกสารแนบ</th>
-					<th>จัดการ</th>
+					<th style="width: 11.00rem;">จัดการ</th>
 				</thead>
 				<tbody>
 					<?php

@@ -22,13 +22,13 @@
 
 	<div class="container">
 		<div style="height:50px;"></div>
-		<div class="well" style="margin:auto; padding:auto; width:80%;">
+		<div class="well" style="margin:auto; padding:auto; width:100%;">
 			<span style="font-size:25px; color:blue">
 				<center><strong>เพิ่มห้องประชุม</strong></center>
 			</span>
 			<span class="pull-left"><a href="#addnew" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add New</a></span>
 			<div style="height:50px;"></div>
-			<table class="table table-striped table-bordered table-hover">
+			<table class="table table-striped table-bordered table-hover text-center">
 				<thead>
 					<th>ชื่อห้องประชุม</th>
 					<th>สถานที่</th>
@@ -42,7 +42,7 @@
 					<?php
 					include('conn.php');
 
-					$query = mysqli_query($conn, "select * from room");
+					$query = mysqli_query($conn, "SELECT * FROM room ORDER BY roomname ASC");
 					while ($row = mysqli_fetch_array($query)) {
 					?>
 						<tr>

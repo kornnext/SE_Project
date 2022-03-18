@@ -1,7 +1,7 @@
 <?php
 	include('conn.php');
 
-	$meetid = $_GET['meetid'];
+	$id = $_GET['id'];
 
 	$title = $_POST['title'];
 	$numattend = $_POST['numattend'];
@@ -9,9 +9,9 @@
 	$remark = $_POST['remark'];
 
 
-	mysqli_query($conn, "UPDATE meeting 
+	mysqli_query($conn, "UPDATE events 
 							SET title='$title', numattend='$numattend', addequipment='$addequipment', remark='$remark' 
-							WHERE meetid='$meetid'");
+							WHERE id='$id'");
 	header('location:addmeet.php');
 
 ?>

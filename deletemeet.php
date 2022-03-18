@@ -1,7 +1,7 @@
 <?php
 	include('conn.php');
-	$meetid=$_GET['meetid'];
-	mysqli_query($conn,"DELETE FROM meeting WHERE meetid='$meetid'");
+	$id=$_GET['id'];
+	mysqli_query($conn,"DELETE FROM events WHERE id='$id'");
 	header('location:addmeet.php');
 
 ?>

@@ -6,7 +6,7 @@
             <img src="img/logo.png" width="30" height="30" alt="">
         </a>
 
-        <a class="navbar-brand" href="index.html">ระบบจองห้องประชุม</a>
+        <a class="navbar-brand" href="./adminpage.php">ระบบจองห้องประชุม</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,11 +15,11 @@
             <ul class="navbar-nav ml-auto">
 
 
-                <li class="nav-item ">
-                    <a class="nav-link" href="#">
+                <!-- <li class="nav-item ">
+                    <a class="nav-link" href="calendar.php">
                         ปฎิทินการจองห้องประชุม
                     </a>
-                </li>
+                </li> -->
 
                 <li class="nav-item ">
                     <a class="nav-link" href="addroom.php">
@@ -29,11 +29,11 @@
 
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="addmeet.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         จองห้องประชุม
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">ค้นหาห้องประชุม</a>
+                        <a class="dropdown-item" href="calendar.php">ค้นหาห้องประชุม</a>
                         <a class="dropdown-item" href="addmeet.php">จองห้องประชุม</a>
                         <a class="dropdown-item" href="#">แก้ไขข้อมูลห้องประชุม</a>
                     </div>

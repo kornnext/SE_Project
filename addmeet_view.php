@@ -36,6 +36,7 @@
 							<div class="col-lg-8">
 								<select class="form-control text-center" id="head" name="head" required>
 									<option selected disabled> --เลือกประธาน-- </option>
+									<option value="นายกเทศมนตรี"> นายกเทศมนตรี</option>
 									<option value="รองนายกเทศมนตรี1">รองนายกเทศมนตรี1</option>
 									<option value="รองนายกเทศมนตรี2">รองนายกเทศมนตรี2</option>
 									<option value="รองนายกเทศมนตรี3">รองนายกเทศมนตรี3</option>

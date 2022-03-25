@@ -2,110 +2,46 @@
 <html>
 
 <head>
+
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href='css/fullcalendar.css' rel='stylesheet' />
 	<title>ระบบจองห้องประชุม</title>
+	<!-- FullCalendar -->
+	<style>
+		#calendar {
+			max-width: 800px;
+		}
+
+		.col-centered {
+			float: none;
+			margin: 0 auto;
+		}
+	</style>
+
 </head>
 
-<?php include("adminmenu.php"); ?>
-
-<div>
-	<img src="img/meeting.png" class="center-block img-fluid" alt="Responsive image">
-</div>
-
-<title>ระบบจองห้องประชุม</title>
-<!-- FullCalendar -->
-
-<link href='css/fullcalendar.css' rel='stylesheet' />
-
-
-<!-- Custom CSS -->
-<style>
-	#calendar {
-		max-width: 800px;
-	}
-
-	.col-centered {
-		float: none;
-		margin: 0 auto;
-	}
-</style>
 
 <body>
+
+	<?php include("adminmenu.php"); ?>
+
+	<div>
+		<img src="img/meeting.png" class="center-block img-fluid" alt="Responsive image">
+	</div>
 
 	<?php
 	require_once('bdd.php');
 
-
-	if (isset($_POST['searchhead']) && isset($_POST['searchroom'])) { //not null
-		$searchhead = $_POST['searchhead'];
-		$searchroom = $_POST['searchroom'];
-		$sql = "SELECT * FROM events where head = '$searchhead' && roomid = '$searchroom'";
-	} else if (isset($_POST['searchhead']) && empty($_POST['searchroom'])) { //room null
-		$searchhead = $_POST['searchhead'];
-		$sql = "SELECT * FROM events where head = '$searchhead';";
-	} else if (isset($_POST['searchroom']) && empty($_POST['searchhead'])) { //head null
-		$searchroom = $_POST['searchroom'];
-		$sql = "SELECT * FROM events where roomid = '$searchroom';";
-	} elseif (empty($_POST['searchroom']) && empty($_POST['searchhead'])) {  //all null
-		$sql = "SELECT * FROM events";
-	} else {
-		$sql = "SELECT * FROM events";
-	}
+	$sql = "SELECT * FROM events";
 
 	$req = $bdd->prepare($sql);
 	$req->execute();
 
 	$events = $req->fetchAll();
 
-
 	?>
-
-
-	</table>
-	<center>
-		<table style="width:70%">
-			<tr>
-				<th>
-					<form method="POST" action="calendar.php">
-						<span style="font-size:20px; color:black;">
-							<center><strong>เลือกผู้บริหาร </strong></center>
-						</span>
-						<select name="searchhead" class="form-control" id="searchhead">
-							<option disabled selected> ประธานทั้งหมด</option>
-							<option value="นายกเทศมนตรี"> นายกเทศมนตรี</option>
-							<option value="รองนายกเทศมนตรี1"> รองนายกเทศมนตรี1</option>
-							<option value="รองนายกเทศมนตรี2"> รองนายกเทศมนตรี2</option>
-							<option value="รองนายกเทศมนตรี3"> รองนายกเทศมนตรี3</option>
-						</select>
-				</th>
-				<th>
-					<span style="font-size:20px; color:black;">
-						<center><strong>เลือกห้อง </strong></center>
-					</span>
-					<select name="searchroom" class="form-control" id="searchroom">
-						<option disabled selected> ห้องทั้งหมด</option>
-						<?PHP
-						$sql1 = "SELECT * FROM room";
-						$req = $bdd->prepare($sql1);
-						$req->execute();
-						$room = $req->fetchAll();
-
-						foreach ($room as $row => $room) {
-							echo  '<option value=' . $room['roomid'] . '>' . $room['roomname'] . '</option>';
-						}
-						?>
-					</select>
-				</th>
-				<th><span style="font-size:20px; color:white;">
-						<center><strong>คลิ๊ก </strong></center>
-					</span> <button type="submit" class="btn btn-primary">ค้นหา</button> </th>
-
-			</tr>
-		</table>
-	</center>
-
 
 
 	<!-- Page Content -->
@@ -113,15 +49,8 @@
 
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h1>ตารางการใช้งานห้องประชุม</h1>
-				<p class="lead">
-					<?php
-					if (isset($_POST['searchhead']) && isset($_POST['searchroom'])) {
-						echo "ประธานชื่อ " . $_POST['searchhead'] . "  ห้องประชุม  " . $_POST['searchroom'];
-					}
-					?>
-
-				</p>
+				<h1>ตารางปฎิทิน</h1>
+				<p class="lead">***</p>
 				<div id="calendar" class="col-centered">
 				</div>
 			</div>

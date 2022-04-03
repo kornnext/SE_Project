@@ -171,7 +171,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-				<button type="submit" class="btn btn-primary" name="submit"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>
+				<button type="submit" class="btn btn-primary" name="submit"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
 					</form>
 			</div>
 

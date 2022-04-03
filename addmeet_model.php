@@ -5,48 +5,54 @@ if (isset($_POST['submit'])) {
 	echo 'send data success';
 
 
+	if ($_POST['end'] < $_POST['start']) {
+		echo "<script>alert('ไม่สามารถทำได้ เวลาสิ้นสุดต้องมากกว่าเวลาเริ่มต้น!!!!')</script>";
+	} elseif ($_POST['end'] > $_POST['start']) {
 
-	$sql_chkDateTime = "SELECT * FROM events WHERE events.roomid = '" . $_POST['roomid'] . "'
-	AND (
-	   (events.start BETWEEN '" . $_POST['start'] . "' AND '" . $_POST['end'] . "' )
-	   OR 
-	   (events.end BETWEEN '" . $_POST['start'] . "' AND '" . $_POST['end'] . "' )
-	   OR 
-		('" . $_POST['start'] . "' BETWEEN events.start  AND events.end)
-	   OR 
-		('" . $_POST['end'] . "' BETWEEN  events.start  AND events.end )
-	)
-	";
+		$sql_chkDateTime = "SELECT * FROM events WHERE events.roomid = '" . $_POST['roomid'] . "'
+							AND (
+							(events.start BETWEEN '" . $_POST['start'] . "' AND '" . $_POST['end'] . "' )
+							OR 
+							(events.end BETWEEN '" . $_POST['start'] . "' AND '" . $_POST['end'] . "' )
+							OR 
+								('" . $_POST['start'] . "' BETWEEN events.start  AND events.end)
+							OR 
+								('" . $_POST['end'] . "' BETWEEN  events.start  AND events.end )
+							)
+							";
 
-	$result_chkDateTime = $conn->query($sql_chkDateTime);
+		$result_chkDateTime = $conn->query($sql_chkDateTime);
 
-	if ($result_chkDateTime->num_rows > 0) {
-		echo "<script>alert('จองไม่ได้ เพราะเวลานี้มีการจองห้องนี้ไปแล้ว!!!!')</script>";
-		// echo "<script>window.open('login.php','_self')</script>";
-	} else {
-		echo "<script>alert('จองได้')</script>";
-	}
+		if ($result_chkDateTime->num_rows > 0) {
+			echo "<script>alert('จองไม่ได้ เพราะเวลานี้มีการจองห้องนี้ไปแล้ว!!!!')</script>";
+			// echo "<script>window.open('login.php','_self')</script>";
+		} else {
+			echo "<script>alert('จองได้')</script>";
+		}
 
 
-	$sql_chkHead = " SELECT * FROM events WHERE events.head = '" . $_POST['head'] . "'
-	AND (
-	
-	   (events.start BETWEEN '" . $_POST['start'] . "' AND '" . $_POST['end'] . "' )
-	   OR 
-	   (events.end BETWEEN '" . $_POST['start'] . "' AND '" . $_POST['end'] . "' )
-	   OR 
-		('" . $_POST['start'] . "' BETWEEN events.start  AND events.end)
-	   OR 
-		('" . $_POST['end'] . "' BETWEEN  events.start  AND events.end )
-	) ";
+		$sql_chkHead = " SELECT * FROM events WHERE events.head = '" . $_POST['head'] . "'
+						AND (
+						
+						(events.start BETWEEN '" . $_POST['start'] . "' AND '" . $_POST['end'] . "' )
+						OR 
+						(events.end BETWEEN '" . $_POST['start'] . "' AND '" . $_POST['end'] . "' )
+						OR 
+							('" . $_POST['start'] . "' BETWEEN events.start  AND events.end)
+						OR 
+							('" . $_POST['end'] . "' BETWEEN  events.start  AND events.end )
+						) ";
 
-	$result_chkHead = $conn->query($sql_chkHead);
+		$result_chkHead = $conn->query($sql_chkHead);
 
-	if ($result_chkHead->num_rows > 0) {
-		echo "<script>alert('ประธานคนนี้ติดประชุมแล้ว ไม่สามารถเลือกได้!!!!!')</script>";
-		// echo "<script>window.open('login.php','_self')</script>";
-	} else {
-		echo "<script>alert('เลือกประธานได้')</script>";
+		if ($result_chkHead->num_rows > 0) {
+			echo "<script>alert('ประธานคนนี้ติดประชุมแล้ว ไม่สามารถเลือกได้!!!!!')</script>";
+			// echo "<script>window.open('login.php','_self')</script>";
+		} else {
+			echo "<script>alert('เลือกประธานได้')</script>";
+		}
+	} elseif ($_POST['end'] >= $_POST['start']) {
+		echo "<script>alert('ไม่สามารถทำได้ เวลาสิ้นสุดต้องมากกว่าเวลาเริ่มต้น!!!!')</script>";
 	}
 } else {
 	echo 'ERROR';

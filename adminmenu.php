@@ -35,19 +35,17 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="calendar.php">ค้นหาห้องประชุม</a>
                         <a class="dropdown-item" href="addmeet.php">จองห้องประชุม</a>
-                        <a class="dropdown-item" href="#">แก้ไขข้อมูลห้องประชุม</a>
                     </div>
-
                 </li>
 
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         รายการจองห้องประชุม
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">ตรวจสอบสถานะการจอง</a>
                     </div>
-                </li>
+                </li> -->
 
             </ul>
 

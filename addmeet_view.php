@@ -50,7 +50,7 @@
 								<label class="control-label" style="position:relative; top:7px;">จำนวนผู้เข้าประชุม:</label>
 							</div>
 							<div class="col-lg-8">
-								<input type="text" class="form-control" name="numattend" required>
+								<input type="number" class="form-control" name="numattend" required>
 							</div>
 						</div>
 
@@ -171,7 +171,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>
+				<button type="submit" class="btn btn-primary" name="submit"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>
 					</form>
 			</div>
 

@@ -37,15 +37,16 @@
 
 			<table class="table table-striped table-bordered table-hover text-center" id="addmeet">
 				<thead>
-					<th >รหัส</th>
+					<th>รหัส</th>
 					<th>วาระประชุม</th>
+					<th>ผู้จอง</th>
 					<th>ประธานการประชุม</th>
 					<th>จำนวนผู้เข้าประชุม</th>
-					<th>ห้องประชุม</th>
+					<th style="width: 5.00rem;">ห้องประชุม</th>
 					<th>วันเวลาเริ่มประชุม</th>
 					<th>วันเวลาสิ้นสุดการประชุม</th>
 					<th>เอกสารแนบ</th>
-					<th style="width: 10.00rem;">
+					<th style="width: 9.00rem;">
 						<a href="#addnew" data-toggle="modal" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>จองห้องประชุม</a>
 					</th>
 				</thead>
@@ -59,12 +60,35 @@
 						<tr>
 							<td><?php echo $row['id']; ?></td>
 							<td><?php echo $row['title']; ?></td>
+							<td>
+								<?php
+								  $row['userid']; 
+
+								$sql_slUser = "SELECT * FROM user WHERE user.ID = '".$row['userid']."' ";
+								$result_slUser = $conn->query($sql_slUser);
+								$row_slUser = $result_slUser->fetch_assoc();
+
+								echo $row_slUser['username'];
+								 ?>
+							</td>
 							<td><?php echo $row['head']; ?></td>
 							<td><?php echo $row['numattend']; ?></td>
-							<td><?php echo $row['roomid']; ?></td>
+							<td>
+
+								<?php echo $row['roomid']; ?> ||
+								<?php
+								$sql_room = "SELECT * FROM room WHERE room.roomid = '" . $row['roomid'] . "' ";
+								$result_room = $conn->query($sql_room);
+								$row_room = $result_room->fetch_assoc();
+								?>
+
+								<?php echo $row_room['roomname']; ?></td>
+
 							<td><?php echo $row['start']; ?></td>
 							<td><?php echo $row['end']; ?></td>
-							<td><a href="<?php echo $row['meetfile']; ?>"><div class="btn btn-primary">ดูไฟล์</div></a></td>
+							<td><a href="<?php echo $row['meetfile']; ?>">
+									<div class="btn btn-primary">ดูไฟล์</div>
+								</a></td>
 							<td>
 								<a href="#edit<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>แก้ไข</a> ||
 								<a href="#del<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> ลบ</a>
@@ -100,6 +124,7 @@
 	<script>
 		$.extend(true, $.fn.dataTable.defaults, {
 			"language": {
+				"emptyTable": "ไม่มีข้อมูลในตาราง",
 				"sProcessing": "กำลังดำเนินการ...",
 				"sLengthMenu": "แสดง_MENU_ แถว",
 				"sZeroRecords": "ไม่พบข้อมูล",

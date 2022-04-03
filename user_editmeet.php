@@ -22,9 +22,9 @@ if (isset($_POST['submit'])) {
 		mysqli_query($conn, "UPDATE events 
 								SET title='$title', numattend='$numattend', addequipment='$addequipment', remark='$remark' 
 								WHERE id='$id'");
-		header('location:addmeet.php');
+		header('location:user_meeting.php');
 	} else {
 		echo '<script>alert("ไม่สามารถจองได้ เพราะจำนวนผู้เข้าร่วมประชุม เกินความจุของประเภทห้องที่เลือก กรุณากรอกใหม่อีกครั้ง") </script> ';
-		echo "<script>window.open('addmeet.php','_self')</script>";
+		echo "<script>window.open('user_meeting.php','_self')</script>";
 	}
 }

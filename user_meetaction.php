@@ -1,39 +1,7 @@
-<!-- Delete -->
-<div class="modal fade" id="del<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <center>
-                    <h4 class="modal-title" id="myModalLabel">ลบการจองห้องประชุม</h4>
-                </center>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-            <div class="modal-body">
-                <?php
-                $del = mysqli_query($conn, "SELECT * FROM events WHERE id='" . $row['id'] . "'");
-                $drow = mysqli_fetch_array($del);
-                ?>
-                <div class="container-fluid">
-                    <!-- <h6>
-                        <center>รหัสการจอง: <strong><?php echo $drow['id']; ?></strong></center>
-                    </h6> -->
-                    <h5>
-                        <center>วาระการประชุม: <strong><?php echo $drow['title']; ?></strong></center>
-                    </h5>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> ยกเลิก</button>
-                <a href="deletemeet.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> ลบ</a>
-            </div>
 
-        </div>
-    </div>
-</div>
-<!-- /.modal -->
 
 <!-- Edit -->
-<div class="modal fade" id="edit<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="edit<?php echo $row_events['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -44,12 +12,12 @@
             </div>
             <div class="modal-body">
                 <?php
-                $edit = mysqli_query($conn, "SELECT * FROM events WHERE id='" . $row['id'] . "'");
+                $edit = mysqli_query($conn, "SELECT * FROM events WHERE id='" . $row_events['id'] . "'");
                 $erow = mysqli_fetch_array($edit);
                 ?>
                 <div class="container-fluid">
 
-                    <form method="POST" action="editmeet.php?id=<?php echo $erow['id']; ?>">
+                    <form method="POST" action="user_editmeet.php?id=<?php echo $erow['id']; ?>">
                         <div class="row">
                             <div class="col-lg-4">
                                 <label style="position:relative; top:7px;">รหัสการจอง:</label>

@@ -17,7 +17,7 @@
 			<div class="modal-body">
 				<div class="container-fluid">
 
-					<form method="POST" action="addmeet_model.php" enctype="multipart/form-data">
+					<form method="POST" action="./user_addmeet_model.php" enctype="multipart/form-data">
 						<!-- add : enctype="multipart/form-data" -->
 						<div class="row">
 							<div class="col-lg-4">

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +9,7 @@
 	<title>ระบบจองห้องประชุม</title>
 </head>
 
-<?php include("adminmenu.php"); ?>
+<?php include('./usermenu.php') ?>
 
 <div>
 	<?php include('carousel.php'); ?>

@@ -44,8 +44,8 @@ session_start();
 		</div>
 	</nav>
 	<div>
-		<img src="img/meeting.png" class="center-block img-fluid" alt="Responsive image">
-	</div>
+		<?php include('./carousel.php') ?>
+	</div> <br>
 
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">

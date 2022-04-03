@@ -40,11 +40,16 @@
     </div>
   </nav>
   <div>
-    <img src="img/meeting.png" class="center-block img-fluid" alt="Responsive_image">
-  </div>
+    <?php include('./carousel.php'); ?>
+  </div><br>
 
 
-<!-- git test -->
+<div>
+  <?php include('./infoUI.php') ?>
+</div>
+
+
+  <!-- git test -->
 
 
 

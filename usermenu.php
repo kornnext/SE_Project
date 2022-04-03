@@ -2,11 +2,11 @@
     <div class="container">
         <!-- Just an image -->
 
-        <a class="navbar-brand" href="./adminpage.php">
+        <a class="navbar-brand" href="./userpage.php">
             <img src="img/logo.png" width="30" height="30" alt="">
         </a>
 
-        <a class="navbar-brand" href="./adminpage.php">ระบบจองห้องประชุม</a>
+        <a class="navbar-brand" href="./userpage.php">ระบบจองห้องประชุม</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -16,32 +16,25 @@
 
 
 
-                <li class="nav-item ">
-                    <a class="nav-link" href="addroom.php">
-                        ห้องประชุม
-                    </a>
-                </li>
+
 
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="addmeet.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        จองห้องประชุม
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ห้องประชุม
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="addmeet.php">จองห้องประชุม</a>
-                        <a class="dropdown-item" href="calendar.php">ปฏิทินการจองห้องประชุม</a>
+                        <a class="dropdown-item" href="./user_meeting.php">จองห้องประชุม</a>
+                        <a class="dropdown-item" href="./calendar_user.php">ปฎิทินการจองห้องประชุม</a>
                     </div>
 
                 </li>
-
 
             </ul>
 
             <div class="ml-md-2 my-lg-0">
 
                 <?php
-
-                session_start();
                 //check session 
                 if (isset($_SESSION['user'])) {
                     echo "<p style='color:white'>ยินดีต้อนรับ ";

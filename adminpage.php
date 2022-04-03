@@ -19,15 +19,21 @@
 
 <body>
 
+
+
   <!-- nav -->
   <?php include('adminmenu.php'); ?>
   <!-- nav -->
 
 
   <div>
-    <?php include('./carousel.php') ?>
+    <?php include('./carousel.php') ?> <br>
   </div>
 
+  
+  <div>
+    <?php include('./infoUI.php') ?> <br>
+  </div>
 
 
 

@@ -91,6 +91,7 @@
 	<script>
 		$.extend(true, $.fn.dataTable.defaults, {
 			"language": {
+				"emptyTable": "ไม่มีข้อมูลในตาราง",
 				"sProcessing": "กำลังดำเนินการ...",
 				"sLengthMenu": "แสดง_MENU_ แถว",
 				"sZeroRecords": "ไม่พบข้อมูล",

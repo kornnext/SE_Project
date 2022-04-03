@@ -12,58 +12,59 @@
 			</div>
 			<div class="modal-body">
 				<div class="container-fluid">
+
 					<form method="POST" action="addroom_model.php">
 						<div class="row">
-							<div class="col-lg-4">
+							<div class="col-lg-5">
 								<label class="control-label" style="position:relative; top:7px;">ชื่อห้อง:</label>
 							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" name="roomname" required>
+							<div class="col-lg-7">
+								<input type="text" class="form-control" name="roomname" required placeholder="">
 							</div>
 						</div>
 						<div style="height:10px;"></div>
 						<div class="row">
-							<div class="col-lg-4">
+							<div class="col-lg-5">
 								<label class="control-label" style="position:relative; top:7px;">สถานที่:</label>
 							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" name="location" required>
+							<div class="col-lg-7">
+								<input type="text" class="form-control" name="location" required placeholder="">
 							</div>
 						</div>
 						<div style="height:10px;"></div>
 						<div class="row">
-							<div class="col-lg-4">
+							<div class="col-lg-5">
 								<label class="control-label" style="position:relative; top:7px;">ความจุห้อง:</label>
 							</div>
-							<div class="col-lg-8">
-								<input type="number" class="form-control" name="capacity" required>
+							<div class="col-lg-7">
+								<input type="number" class="form-control" name="capacity" min="0" required placeholder=" ">
 							</div>
 						</div>
 						<div style="height:10px;"></div>
 						<div class="row">
-							<div class="col-lg-4">
+							<div class="col-lg-5">
 								<label class="control-label" style="position:relative; top:7px;">จำนวนโปรเจคเตอร์:</label>
 							</div>
-							<div class="col-lg-8">
-								<input type="number" class="form-control" name="projector" required>
+							<div class="col-lg-7">
+								<input type="number" class="form-control" name="projector" min="0" required placeholder=" ">
 							</div>
 						</div>
 						<div style="height:10px;"></div>
 						<div class="row">
-							<div class="col-lg-4">
+							<div class="col-lg-5">
 								<label class="control-label" style="position:relative; top:7px;">จำนวนไมค์โครโฟน:</label>
 							</div>
-							<div class="col-lg-8">
-								<input type="number" class="form-control" name="microphone" required>
+							<div class="col-lg-7">
+								<input type="number" class="form-control" name="microphone" min="0" required placeholder=" ">
 							</div>
 						</div>
 						<div style="height:10px;"></div>
 						<div class="row">
-							<div class="col-lg-4">
+							<div class="col-lg-5">
 								<label class="control-label" style="position:relative; top:7px;">อื่นๆ:</label>
 							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" name="other">
+							<div class="col-lg-7">
+								<input type="text" class="form-control" name="other" placeholder=" ">
 							</div>
 						</div>
 						<div style="height:10px;"></div>
@@ -71,8 +72,8 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>
+				<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> ยกเลิก</button>
+				<button type="submit" class="btn btn-success" name="submit"><span class="glyphicon glyphicon-floppy-disk"></span> เพิ่ม</a>
 					</form>
 			</div>
 

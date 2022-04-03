@@ -3,10 +3,10 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <center>
-                    <h4 class="modal-title" id="myModalLabel">Delete</h4>
+                    <h4 class="modal-title" id="myModalLabel">ลบการจองห้องประชุม</h4>
                 </center>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <?php
@@ -14,17 +14,17 @@
                 $drow = mysqli_fetch_array($del);
                 ?>
                 <div class="container-fluid">
-                    <h6>
+                    <!-- <h6>
                         <center>รหัสการจอง: <strong><?php echo $drow['id']; ?></strong></center>
-                    </h6>
+                    </h6> -->
                     <h5>
                         <center>วาระการประชุม: <strong><?php echo $drow['title']; ?></strong></center>
                     </h5>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                <a href="deletemeet.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> ยกเลิก</button>
+                <a href="deletemeet.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> ลบ</a>
             </div>
 
         </div>
@@ -37,10 +37,10 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <center>
-                    <h4 class="modal-title" id="myModalLabel">Edit</h4>
+                    <h4 class="modal-title" id="myModalLabel">แก้ไขข้อมูลการจองห้องประชุม</h4>
                 </center>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <?php
@@ -102,8 +102,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-check"></span> Save</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> ยกเลิก</button>
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-check"></span> บันทึก</button>
             </div>
             </form>
         </div>

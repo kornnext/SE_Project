@@ -44,25 +44,6 @@
 							</div>
 						</div>
 
-						<div style="height:10px;"></div>
-						<div class="row">
-							<div class="col-lg-4">
-								<label class="control-label" style="position:relative; top:7px;">จำนวนผู้เข้าประชุม:</label>
-							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" name="numattend" required>
-							</div>
-						</div>
-
-						<div style="height:10px;"></div>
-						<div class="row">
-							<div class="col-lg-4">
-								<label class="control-label" style="position:relative; top:7px;">ผู้เข้าร่วมประชุม:</label>
-							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" name="listname" required>
-							</div>
-						</div>
 
 						<div style="height:10px;"></div>
 						<div class="row">
@@ -76,7 +57,8 @@
 									$query = mysqli_query($conn, "SELECT * FROM room ORDER BY roomname ASC");
 									while ($row = mysqli_fetch_array($query)) {
 									?>
-										<option value="<?php echo $row['roomid']; ?>"><?php echo $row['roomname']; ?></option>
+										<option value="<?php echo $row['roomid']; ?>"><?php echo $row['roomname']; ?> || ความจุ: <?php echo $row['capacity'] ?> คน</option>
+
 									<?php } ?>
 								</select>
 							</div>
@@ -85,10 +67,38 @@
 						<div style="height:10px;"></div>
 						<div class="row">
 							<div class="col-lg-4">
+								<label class="control-label" style="position:relative; top:7px;">จำนวนผู้เข้าประชุม:</label>
+							</div>
+							<div class="col-lg-8">
+								<input type="number" class="form-control" name="numattend" required min="0" max="">
+							</div>
+						</div>
+
+						<div style="height:10px;"></div>
+						<div class="row">
+							<div class="col-lg-4">
+								<label class="control-label" style="position:relative; top:7px;">ผู้เข้าร่วมประชุม:</label>
+							</div>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" name="listname" required>
+							</div>
+						</div>
+
+
+
+						<div style="height:10px;"></div>
+						<div class="row">
+							<div class="col-lg-4">
 								<label class="control-label" style="position:relative; top:7px;">เริ่มเวลา:</label>
 							</div>
 							<div class="col-lg-8">
-								<input type="datetime-local" class="form-control text-center" name="start" required>
+								<?php
+								$mindate = date("Y-m-d");
+								$mintime = date("h:i");
+								$min = $mindate . "T" . $mintime;
+
+								?>
+								<input type="datetime-local" class="form-control text-center" name="start" required min="">
 							</div>
 						</div>
 
@@ -98,7 +108,7 @@
 								<label class="control-label" style="position:relative; top:7px;">สิ้นสุดเวลา:</label>
 							</div>
 							<div class="col-lg-8">
-								<input type="datetime-local" class="form-control text-center" name="end" required>
+								<input type="datetime-local" class="form-control text-center" name="end" required min="">
 							</div>
 						</div>
 
@@ -122,15 +132,6 @@
 							</div>
 						</div>
 
-						<!-- <div style="height:10px;"></div>
-						<div class="row">
-							<div class="col-lg-4">
-								<label class="control-label" style="position:relative; top:7px;">เอกสารวาระประชุม:</label>
-							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" name="meetfile">
-							</div>
-						</div> -->
 
 						<div style="height:10px;"></div>
 						<div class="row">
@@ -170,8 +171,8 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>
+				<button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>ยกเลิก</button>
+				<button type="submit" class="btn btn-success" name="submit"><span class="glyphicon glyphicon-floppy-disk"></span> เพิ่ม</a>
 					</form>
 			</div>
 

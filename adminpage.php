@@ -25,7 +25,7 @@
 
 
   <div>
-    <img src="img/meeting.png" class="center-block img-fluid" alt="Responsive image">
+    <?php include('./carousel.php') ?>
   </div>
 
 

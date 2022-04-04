@@ -23,7 +23,9 @@ if (isset($_POST['submit'])) {
 
             $ac_room = 1;
         } else {
-            // echo '<script>alert("ไม่สามารถจองได้ เพราะจำนวนผู้เข้าร่วมประชุม เกินความจุของประเภทห้องที่เลือก กรุณาเลือกใหม่อีกครั้ง") </script> ';
+            echo '<script>alert("ไม่สามารถจองได้ เพราะจำนวนผู้เข้าร่วมประชุม เกินความจุของประเภทห้องที่เลือก กรุณาเลือกใหม่อีกครั้ง") </script> ';
+            echo "<script>window.open('user_meeting.php','_self')</script>";
+
             $ac_room = 0;
         }
 
@@ -49,7 +51,9 @@ if (isset($_POST['submit'])) {
         $result_chkDateTime = $conn->query($sql_chkDateTime);
 
         if ($result_chkDateTime->num_rows > 0) {
-            //echo "<script>alert('จองไม่ได้ เพราะเวลานี้มีการจองห้องนี้ไปแล้ว!!!!')</script>";
+            echo "<script>alert('จองไม่ได้ เพราะเวลานี้มีการจองห้องนี้ไปแล้ว!!')</script>";
+            echo "<script>window.open('user_meeting.php','_self')</script>";
+
 
             $ac_dateSnE = 0;
         } else {
@@ -79,7 +83,9 @@ if (isset($_POST['submit'])) {
         $result_chkHead = $conn->query($sql_chkHead);
 
         if ($result_chkHead->num_rows > 0) {
-            //echo "<script>alert('ประธานคนนี้ติดประชุมแล้ว ไม่สามารถเลือกได้!!!!!')</script>";
+            echo "<script>alert('ประธานคนนี้ติดประชุมแล้ว ไม่สามารถเลือกได้!!')</script>";
+            echo "<script>window.open('user_meeting.php','_self')</script>";
+
 
             $ac_head = 0;
         } else {

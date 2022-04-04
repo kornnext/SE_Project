@@ -23,7 +23,9 @@ if (isset($_POST['submit'])) {
 
 			$ac_room = 1;
 		} else {
-			// echo '<script>alert("ไม่สามารถจองได้ เพราะจำนวนผู้เข้าร่วมประชุม เกินความจุของประเภทห้องที่เลือก กรุณาเลือกใหม่อีกครั้ง") </script> ';
+			echo '<script>alert("ไม่สามารถจองได้ เพราะจำนวนผู้เข้าร่วมประชุม เกินความจุของประเภทห้องที่เลือก กรุณาเลือกใหม่อีกครั้ง") </script> ';
+			echo "<script>window.open('addmeet.php','_self')</script>";
+
 			$ac_room = 0;
 		}
 
@@ -49,7 +51,9 @@ if (isset($_POST['submit'])) {
 		$result_chkDateTime = $conn->query($sql_chkDateTime);
 
 		if ($result_chkDateTime->num_rows > 0) {
-			// echo "<script>alert('จองไม่ได้ เพราะเวลานี้มีการจองห้องนี้ไปแล้ว!!!!')</script>";
+			echo "<script>alert('จองไม่ได้ เพราะเวลานี้มีการจองห้องนี้ไปแล้ว!!')</script>";
+			echo "<script>window.open('addmeet.php','_self')</script>";
+
 
 			$ac_dateSnE = 0;
 		} else {
@@ -79,7 +83,9 @@ if (isset($_POST['submit'])) {
 		$result_chkHead = $conn->query($sql_chkHead);
 
 		if ($result_chkHead->num_rows > 0) {
-			// echo "<script>alert('ประธานคนนี้ติดประชุมแล้ว ไม่สามารถเลือกได้!!!!!')</script>";
+			echo "<script>alert('ประธานคนนี้ติดประชุมแล้ว ไม่สามารถเลือกได้!!')</script>";
+			echo "<script>window.open('addmeet.php','_self')</script>";
+
 
 			$ac_head = 0;
 		} else {
@@ -124,8 +130,8 @@ if (isset($_POST['submit'])) {
 			mysqli_query($conn, "INSERT INTO events (title, head, numattend, listname, roomid, start, end, addequipment, remark, meetfile, userid) 
 						VALUES ('$title', '$head', '$numattend', '$listname', '$roomid', '$start', '$end', '$addequipment', '$remark', '$meetfilelocation', '$useract' )");
 			header('location:addmeet.php');
-		} else {
-			echo "<script>alert('ไม่สามารถจองห้องประชุมได้! \n โปรดตรวจสอบว่าห้องที่ท่านเลือก ณ เวลานั้นว่าง และประธานประชุมติดการประชุมอื่นอยู่หรือไม่ \n ลองอีกครั้งภายหลัง ขออภัยในความไม่สะดวก')</script>";
+		} elseif($ac_room < 1 || $ac_dateSnE < 1 || $ac_head < 1) {
+			echo "<script>alert('ไม่สามารถจองห้องประชุมได้!  โปรดตรวจสอบว่าห้องที่ท่านเลือก ณ เวลานั้นว่าง และประธานประชุมติดการประชุมอื่นอยู่หรือไม่  ลองอีกครั้งภายหลัง ขออภัยในความไม่สะดวก')</script>";
 			echo "<script>window.open('addmeet.php','_self')</script>";
 		}
 	} elseif ($_POST['end'] >= $_POST['start']) {
